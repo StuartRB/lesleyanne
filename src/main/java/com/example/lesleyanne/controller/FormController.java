@@ -26,6 +26,11 @@ public class FormController {
         return "form";
     }
 
+    @GetMapping("/login")
+    public String login() {
+        return "login"; // renders login.html
+    }
+
     @PostMapping("/submit")
     public String submitForm(@Valid @ModelAttribute UserForm userForm, BindingResult result, Model model) {
         if (result.hasErrors()) {
