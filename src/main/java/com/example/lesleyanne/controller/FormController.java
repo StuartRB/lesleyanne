@@ -31,6 +31,11 @@ public class FormController {
         return "login"; // renders login.html
     }
 
+    @GetMapping("/logout")
+    public String logout() {
+        return "logout";
+    }
+
     @PostMapping("/submit")
     public String submitForm(@Valid @ModelAttribute UserForm userForm, BindingResult result, Model model) {
         if (result.hasErrors()) {
